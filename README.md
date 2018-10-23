@@ -2,6 +2,21 @@
 
 Manage IAM account alias and password policy.
 
+## Usage
+
+`iam-account`:
+
+```hcl
+module "iam_account" {
+  source = "terraform-aws-modules/iam/aws//modules/iam-account"
+
+  account_alias = "awesome-company"
+
+  minimum_password_length = 37
+  require_numbers         = false
+}
+```
+
 ## Notes
 
 * If IAM account alias was previously set (either via AWS console or during the creation of an account from AWS Organizations) you will see this error:
